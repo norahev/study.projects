@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PokemonActivity"
+    android:weightSum="1"
+    android:background="#f3e5f5" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemon_name"
+        android:textColor="#4a148c"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:paddingTop="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemon_number"
+        android:textColor="#d84315"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:paddingTop="5dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemon_type1"
+        android:textColor="#ff7043"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:paddingTop="5dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemon_type2"
+        android:textColor="#ff7043"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:paddingTop="5dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemon_description"
+        android:textColor="#ba68c8"
+        android:textAlignment="center"
+        android:textSize="14dp"
+        android:paddingTop="5dp" />
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/button_catch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#c8e6c9"
+        android:text="Catch"
+        android:textColor="#66bb6a"
+        android:onClick="toggleCatch" />
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/sprite"
+        android:layout_gravity="center"
+        android:layout_weight="1"/>
+
+        />
+</LinearLayout>
