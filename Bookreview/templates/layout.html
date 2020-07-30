@@ -1,0 +1,49 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <title>Review50: {% block title %}{% endblock %}</title> 
+        <style>
+            body {
+                 font-family: fantasy;
+                background-color: cornflowerblue;
+                }
+main {
+    font-family: fantasy;
+    background-color: cadetblue;
+}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <a class="navbar-brand" href="/"></a>
+            
+        <div class="container-fluid" id="navbarNavAltMarkup">
+            {% if session.username %}
+            <div class="row">
+                <div class="col-xs-3">
+                    <a class="navbar-brand" href="/">Homepage of {{username}}</a> 
+                </div>
+                <div class="col-xs-3">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            {% else %}
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/register">Register <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/login">Sign in</a></div>
+            {% endif %}
+            </div>
+        </nav>
+        <main class="container-fluid">
+            {% block main %}{% endblock %}
+        </main>
+    </body>
+</html>

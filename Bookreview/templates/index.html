@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Review50
+{% endblock %}
+
+{% block main %}
+<header> <h1>Review50 - Where you can check out everyones favourite books.</h1></header>
+<div class="d-flex justify-content-center flex-row bd-highlight mb-3">
+    <div class="p-4 bd-highlight">Search for books here</div>
+    <div class="p-4 flex-fill bd-highlight">
+        <form action="/" method = "post">
+        <div class="form-group">
+            <input type="text" class="form-control" id="search" name="s" placeholder="ISBN, Title, Author of book">
+          </div>
+          <button type="submit" class="btn btn-secondary btn-lg btn-block">Search</button>
+          </form>
+    </div>
+</div>
+{% if data %}
+    <table>
+        {% if booksearch %}
+        <h2>Your search results:</h2>
+        {% for book in booksearch[:10] %}
+        <tr>
+            <td>
+                <a href='/isbn/{{book.isbn}}'>{{book.title}}</a>
+                <br>
+                <span>{{book.author}}</span>
+                <br>
+                <span>{{book.year}}</span>
+                <br>
+                <span>{{book.isbn}}</span>
+                <br>
+                <hr>
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h2>{{error}}</h2>
+        {% endif %}
+    </table>
+{% elif not data %}
+<table>
+    <h2>{{error}}</h2>
+    <h2>Recent books:</h2>
+    {% for book in books[:10] %}
+    <tr>
+        <td>
+            <a href='/isbn/{{book.isbn}}'>{{book.title}}</a>
+            <br>
+            <span>{{book.author}}</span>
+            <br>
+            <span>{{book.year}}</span>
+            <br>
+            <span>{{book.isbn}}</span>
+            <br>
+            <hr>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}
