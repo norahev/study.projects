@@ -1,1 +1,0 @@
-Cats are very nice and majestic creatures.
