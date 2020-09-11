@@ -1,1 +1,0 @@
-Britney is an american singer.
